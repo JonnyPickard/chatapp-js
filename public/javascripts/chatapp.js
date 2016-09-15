@@ -4,7 +4,10 @@ app.controller('chatController', function($scope) {
   $scope.chatList = [];
 
   $scope.addChat = function(){
-    $scope.chatList.push($scope.chat);
+    $scope.chatList.push({
+      text: $scope.chat,
+      time: Date.now(),
+    });
   };
 
 });
