@@ -15,7 +15,8 @@
 
   <div class="col-md-offset-2 col-md-8" ng-controller="chatController">
     <div class="chatFeed" ng-repeat="chat in chatList">
-      {{chat.text}}
+      <div id="chatText">{{chat.text}}</div>
+      <div id="chatTimeStamp">@ {{chat.time}}</div><br />
     </div>
     <div class="chatForm">
       <form ng-submit="addChat()">
@@ -23,6 +24,5 @@
         <input type="submit" value="Chat">
       </form>
     </div>
-    {{hello}}
   </div>
 </body>
