@@ -1,7 +1,10 @@
 var app = angular.module('chatapp', []);
 
 app.controller('chatController', function($scope) {
-  $scope.hello = "Hey";
-});
+  $scope.chatList = [];
 
-console.log("here");
+  $scope.addChat = function(){
+    $scope.chatList.push($scope.chat);
+  };
+
+});

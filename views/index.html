@@ -12,7 +12,17 @@
        <a class="navbar-brand" href="#" style="font-family: verdana;"> Chatapp </a>
      </div>
  </nav>
+
   <div class="col-md-offset-2 col-md-8" ng-controller="chatController">
+    <div class="chatFeed" ng-repeat="chat in chatList">
+      {{chat}}
+    </div>
+    <div class="chatForm">
+      <form ng-submit="addChat()">
+        Input Chat: <input class="chatInput" type="text" ng-model="chat"><br>
+        <input type="submit" value="Chat">
+      </form>
+    </div>
     {{hello}}
   </div>
 </body>
