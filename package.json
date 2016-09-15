@@ -2,10 +2,15 @@
   "name": "angular-chat",
   "version": "1.0.0",
   "description": "Simple html - angularjs chat app",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "test"
   },
   "author": "Jonny Pickard",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "jade": "^1.11.0"
+  }
 }
