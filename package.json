@@ -1,0 +1,11 @@
+{
+  "name": "angular-chat",
+  "version": "1.0.0",
+  "description": "Simple html - angularjs chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jonny Pickard",
+  "license": "ISC"
+}
