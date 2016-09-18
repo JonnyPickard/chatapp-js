@@ -6,23 +6,38 @@
     <script type="text/javascript" src="javascripts/chatapp.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
-<body ng-app="chatapp">
-  <nav class="navbar-fluid navbar-default navbar-fixed-top navbar-inverse">
-     <div class="container">
-       <a class="navbar-brand" href="#" style="font-family: verdana;"> Chatapp </a>
-     </div>
- </nav>
+<body ng-app="chatapp" ng-controller="chatController">
 
-  <div class="col-md-offset-2 col-md-8" ng-controller="chatController">
-    <div class="chatFeed" ng-repeat="chat in chatList">
-      <div id="chatText">{{chat.text}}</div>
-      <div id="chatTimeStamp">@ {{chat.time}}</div><br />
+  <nav class="navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Chatapp</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" id="username"><span class="glyphicon glyphicon-user"></span><span id="username_loggedIn"> {{getUsername()}}</span></a></li>
+      </ul>
     </div>
-    <div class="chatForm">
+  </nav>
+
+  <div class="col-md-offset-2 col-md-8">
+
+    <div class="chatFeed" ng-repeat="chat in chatList | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+      <div id="chatText">{{chat.text}}</div>
+      <span id="chatUser">by: {{chat.user}} </span>
+      <span id="chatTimeStamp">@ {{chat.time}}</span><br />
+    </div>
+
+    <div class="chatForm" ng-hide="isLoggedIn()">
       <form ng-submit="addChat()">
-        Input Chat: <input class="chatInput" type="text" ng-model="chat"><br>
-        <input type="submit" value="Chat">
+        <input class="chatInput form-control" type="text" ng-model="chat" required><br />
+        <input class="btn btn-primary" type="submit" value="Chat">
       </form>
     </div>
+
+    <div class="login" ng-show="isLoggedIn()">
+      <form ng-submit="logIn()">
+        <input class="form-control" type="text" ng-model="username" required><br>
+        <input class="btn btn-primary" type="submit" value="Login">
+      </form>
+    </div>
+
   </div>
 </body>

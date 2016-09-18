@@ -4,7 +4,8 @@
   "description": "Simple html - angularjs chat app",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node app.js",
+    "test": "protractor conf.js"
   },
   "author": "Jonny Pickard",
   "license": "ISC",
