@@ -23,7 +23,7 @@
     <div class="chatFeed" ng-repeat="chat in chatList | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
       <div id="chatText">{{chat.text}}</div>
       <span id="chatUser">by: {{chat.user}} </span>
-      <span id="chatTimeStamp">@ {{chat.time}}</span><br />
+      <span id="chatTimeStamp">  @{{chat.time}}</span><br />
     </div>
 
   </div>
