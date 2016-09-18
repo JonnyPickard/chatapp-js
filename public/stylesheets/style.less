@@ -1,4 +1,11 @@
+@head-foot-bcolor: #66a5ad;
+@button-color: #07575B;
+@background-color: white;
+@nav-text: white;
+@odd-background: #003b46;
+
 body {
+	background-color: @background-color;
 	padding-top:70px;
 	width: 100%;
     height: 100%;
@@ -28,8 +35,8 @@ body {
 	height: 110px;
 	border-top: solid;
 	border-width: 1px;
-	border-color: grey;
-	background-color: white;
+	border-color: #e6e6e6;
+	background-color: @head-foot-bcolor;
 }
 
 .chatFeed {
@@ -46,6 +53,7 @@ body {
 
 .btn {
 	color: white;
+	background-color: @button-color;
 	border: 2px solid #4CAF50
 	margin: 10px 10px 10px 10px;
 }
@@ -56,6 +64,17 @@ body {
 	border-radius: 5px;
 }
 
-.navbar {
-	font-family: "courier";
+.navbar-default {
+	background-color: @head-foot-bcolor;
+	border-bottom: solid;
+	border-color: #e6e6e6;
+	border-width: 1px;
+}
+
+#mainTitle {
+	color: @nav-text;
+}
+
+#username {
+	color: @nav-text;
 }

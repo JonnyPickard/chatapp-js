@@ -4,13 +4,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script type="text/javascript" src="javascripts/chatapp.js"></script>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet/less" type="text/css" href="stylesheets/style.less">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
 </head>
 <body ng-app="chatapp" ng-controller="chatController">
 
   <nav class="navbar-default navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Chatapp</a>
+      <a class="navbar-brand" href="#" id="mainTitle">Chatapp</a>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" id="username"><span class="glyphicon glyphicon-user"></span><span id="username_loggedIn"> {{getUsername()}}</span></a></li>
       </ul>
