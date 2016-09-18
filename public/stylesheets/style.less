@@ -1,4 +1,5 @@
-@head-foot-bcolor: #c4ff4d;
+@head-foot-bcolor: #88cc00;//#c4ff4d;
+@head-foot-bcolor2: #c4ff4d;
 @button-color: #88cc00;
 @background-color: white;
 @nav-text: white;
@@ -39,7 +40,8 @@ body {
 	border-top: solid;
 	border-width: 1px;
 	border-color: @border-grey;
-	background-color: @head-foot-bcolor;
+	background: linear-gradient(@head-foot-bcolor, @head-foot-bcolor2);
+	// background-color: @head-foot-bcolor;
 }
 
 .chatFeed {
@@ -56,7 +58,7 @@ body {
 
 .btn {
 	color: white;
-	background-color: @button-color;
+	background: linear-gradient(@head-foot-bcolor, @button-color);
 	border: 2px solid @border-grey;
 	margin: 10px 0px 10px 0px;
 }
@@ -68,7 +70,7 @@ body {
 }
 
 .navbar-default {
-	background-color: @head-foot-bcolor;
+	background: linear-gradient(@head-foot-bcolor, @head-foot-bcolor2);
 	border-bottom: solid;
 	border-color: #e6e6e6;
 	border-width: 1px;
