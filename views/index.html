@@ -25,19 +25,23 @@
       <span id="chatTimeStamp">@ {{chat.time}}</span><br />
     </div>
 
-    <div class="chatForm" ng-hide="isLoggedIn()">
-      <form ng-submit="addChat()">
-        <input class="chatInput form-control" type="text" ng-model="chat" required><br />
-        <input class="btn btn-primary" type="submit" value="Chat">
-      </form>
-    </div>
+  </div>
 
-    <div class="login" ng-show="isLoggedIn()">
-      <form ng-submit="logIn()">
-        <input class="form-control" type="text" ng-model="username" required><br>
-        <input class="btn btn-primary" type="submit" value="Login">
-      </form>
-    </div>
+  <div class="footerBackground">
+    <div class="footer col-md-offset-2 col-md-8">
+      <div class="chatForm" ng-hide="isLoggedIn()">
+        <form ng-submit="addChat()">
+          <input class="chatInput form-control" type="text" ng-model="chat" required><br />
+          <input class="btn btn-primary" type="submit" value="Chat">
+        </form>
+      </div>
 
+      <div class="login" ng-show="isLoggedIn()">
+        <form ng-submit="logIn()">
+          <input class="form-control" type="text" ng-model="username" required><br>
+          <input class="btn btn-primary" type="submit" value="Login">
+        </form>
+      </div>
+    </div>
   </div>
 </body>
