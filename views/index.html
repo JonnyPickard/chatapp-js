@@ -13,7 +13,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#" id="mainTitle">Chatapp</a>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" id="username"><span class="glyphicon glyphicon-user"></span><span id="username_loggedIn"> {{getUsername()}}</span></a></li>
+        <li class="pull-right"><a href="#" id="username"><span class="glyphicon glyphicon-user"></span><span id="username_loggedIn"> {{getUsername()}}</span></a></li>
       </ul>
     </div>
   </nav>
@@ -32,15 +32,15 @@
     <div class="footer col-md-offset-2 col-md-8">
       <div class="chatForm" ng-hide="isLoggedIn()">
         <form ng-submit="addChat()">
-          <input class="chatInput form-control" type="text" ng-model="chat" required><br />
-          <input class="btn btn-primary" type="submit" value="Chat">
+          <input class="chatInput form-control" type="text" ng-model="chat" required>
+          <input class="btn" type="submit" value="Chat">
         </form>
       </div>
 
       <div class="login" ng-show="isLoggedIn()">
         <form ng-submit="logIn()">
-          <input class="form-control" type="text" ng-model="username" required><br>
-          <input class="btn btn-primary" type="submit" value="Login">
+          <input class="form-control" type="text" ng-model="username" required>
+          <input class="btn" type="submit" value="Login">
         </form>
       </div>
     </div>

@@ -1,8 +1,10 @@
-@head-foot-bcolor: #66a5ad;
-@button-color: #07575B;
+@head-foot-bcolor: #c4ff4d;
+@button-color: #88cc00;
 @background-color: white;
 @nav-text: white;
-@odd-background: #003b46;
+@odd-background: #efffcc; //#003b46;
+@even-background: #f7ffe6;
+@border-grey: #e6e6e6;
 
 body {
 	background-color: @background-color;
@@ -24,8 +26,9 @@ body {
 
 .footer {
 	position: fixed;
-  bottom: 50px;
-  height: 50px;
+	margin-bottom: 10px;
+	bottom: 40px;
+  height: 40px;
 }
 
 .footerBackground {
@@ -35,7 +38,7 @@ body {
 	height: 110px;
 	border-top: solid;
 	border-width: 1px;
-	border-color: #e6e6e6;
+	border-color: @border-grey;
 	background-color: @head-foot-bcolor;
 }
 
@@ -44,18 +47,18 @@ body {
 }
 
 .odd {
-	background-color: #f2f9ff;
+	background-color: @odd-background;
 
 }
 .even {
-	background-color: #eceff3;
+	background-color: @even-background;
 }
 
 .btn {
 	color: white;
 	background-color: @button-color;
-	border: 2px solid #4CAF50
-	margin: 10px 10px 10px 10px;
+	border: 2px solid @border-grey;
+	margin: 10px 0px 10px 0px;
 }
 
 .chatFeed {
