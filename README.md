@@ -38,4 +38,4 @@ Still to do
 3. Add user avatars.
 4. Add password protected private chats.
 5. Add a favicon.
-6. Host on a server for real world use! 
+6. Host on a server for real world use!

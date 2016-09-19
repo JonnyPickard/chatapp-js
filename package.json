@@ -5,16 +5,20 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "protractor conf.js"
+    "e2e-test": "protractor conf.js",
+    "test": "mocha spec/unit/**/*.js"
   },
   "author": "Jonny Pickard",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "mongoose": "^4.6.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
     "protractor": "^4.0.8"
   }
 }
