@@ -6,7 +6,11 @@ The front end for a web chat app. Made with JS, NodeJS, ExpressJS, AngularJS and
 Screenshots
 -----------
 
+#### Mobile
+
 <img src="https://github.com/JonnyPickard/chatapp-js/blob/master/screen-shot-mobile.png">
+
+#### Web
 
 <img src="https://github.com/JonnyPickard/chatapp-js/blob/master/screen-shot-desktop.png">
 
@@ -30,6 +34,8 @@ Still to do
 -----------
 
 1. Persist the chats with mongodb.
-2. Add user authentication with mongodb.
+2. Add user authentication with mongodb, bcrypt and passport.
 3. Add user avatars.
-4. Add password protected private chats
+4. Add password protected private chats.
+5. Add a favicon.
+6. Host on a server for real world use! 
