@@ -32,4 +32,13 @@ describe("User", function() {
       done();
     });
   });
+
+  describe('#comparePasswords()', function(){
+    it('should successfully compare the raw and hashed passwords', function(){
+      var password = ('secret');
+      var hashedPassword = User().hashPassword(password);
+
+      expect(User().comparePasswords(password, hashedPassword)).to.equal(true);
+    });
+  });
 });
