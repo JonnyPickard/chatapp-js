@@ -1,4 +1,4 @@
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['./spec/chatapp_spec.js']
+  specs: ['./spec/e2e/chatapp_spec.js']
 };

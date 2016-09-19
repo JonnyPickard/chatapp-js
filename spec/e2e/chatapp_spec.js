@@ -1,9 +1,10 @@
 describe('chatapp home page chat list', function(){
-  it('should add a chat', function(){
+  it('should log in then add a chat', function(){
     browser.get('http://localhost:3000');
 
     //login
     element(by.model('username')).sendKeys('testUser');
+    element(by.model('password')).sendKeys('testPassword');
     element(by.css('[value="Login"]')).click();
 
     element(by.css('.chatInput')).sendKeys('First chatapp test');

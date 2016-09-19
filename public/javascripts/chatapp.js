@@ -3,7 +3,8 @@ var app = angular.module('chatapp', []);
 app.controller('chatController', function($scope) {
 
   var user = {
-    name: ""
+    name: "",
+    password: "",
   };
 
   $scope.chatList = [];
@@ -22,6 +23,7 @@ app.controller('chatController', function($scope) {
 
   $scope.logIn = function(){
     user.name = $scope.username;
+    user.password = $scope.password;
   };
 
   $scope.addChat = function(){
