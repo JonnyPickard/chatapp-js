@@ -40,5 +40,14 @@ describe("User", function() {
 
       expect(User().comparePasswords(password, hashedPassword)).to.equal(true);
     });
+
+    it('should unsuccessfully compare a fake and hashed password', function(){
+      var password = ('secret');
+      var fakePassword = ('fakePassword');
+
+      var hashedPassword = User().hashPassword(password);
+
+      expect(User().comparePasswords(fakePassword, hashedPassword)).to.equal(false);
+    });
   });
 });
