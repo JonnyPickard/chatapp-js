@@ -5,16 +5,6 @@ var LocalStrategy = require('passport-local');
 
 var User = require('../models/user');
 
-//Register
-router.get('/register', function(req, res, next) {
-  res.render('register');
-});
-
-//Login
-router.get('/login', function(req, res, next){
-  res.render('login');
-});
-
 //Create User
 router.post('/register', function(req, res, next){
   var name      = req.body.name;
@@ -97,9 +87,7 @@ router.post('/login',
 router.get('/logout', function(req, res){
   req.logout();
 
-  req.flash('success_msg', 'You are logged out');
-
-  res.redirect('/users/login');
+  res.redirect('#/users/login');
 });
 
 module.exports = router;

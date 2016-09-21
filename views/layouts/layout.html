@@ -1,0 +1,46 @@
+<html ng-app="chatapp">
+<head>
+  <meta charset="utf-8">
+  <title>Chatapp</title>
+  <link rel="stylesheet" href="/stylesheets/style.css"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>v
+
+  <script type="text/javascript" src="/javascripts/chatapp.js"></script>
+  <script src="/javascripts/controllers/authController.js"></script>
+  <script src="/javascripts/controllers/chatController.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+
+
+            <li role="presentation"><a href="#/users/logout">Logout</a></li>
+
+            <li role="presentation"><a href="#/users/login">Login</a></li>
+            <li role="presentation"><a href="#/users/register">Sign Up</a></li>
+
+
+        </ul>
+      </nav>
+      <h3 class="text-muted">Chatapp</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div ng-view></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2016 Chatapp</p>
+    </footer>
+  </div>
+</body>
+</html>

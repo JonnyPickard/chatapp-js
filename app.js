@@ -2,7 +2,6 @@ var express           = require('express');
 var path              = require('path');
 var cookieParser      = require('cookie-parser');
 var bodyParser        = require('body-parser');
-var exphbs            = require('express-handlebars');
 var expressValidator  = require('express-validator');
 var flash             = require('connect-flash');
 var session           = require('express-session');
@@ -10,10 +9,6 @@ var passport          = require('passport');
 var LocalStrategy     = require('passport-local').Strategy;
 var mongo             = require('mongodb');
 var mongoose          = require('mongoose');
-
-//Set routes
-var routes  = require('./routes/index');
-var users   = require('./routes/users');
 
 //Set up db
 mongoose.connect('mongodb://localhost/chatapp');
@@ -24,9 +19,6 @@ var app     = express();
 
 //View engine
 app.set('views', path.join(__dirname, 'views'));
-
-app.engine('handlebars', exphbs({defaultLayout: 'layout'}));
-app.set('view engine', 'handlebars');
 
 //bodyParser middleware
 app.use(bodyParser.urlencoded({extended: false}));
@@ -68,21 +60,10 @@ app.use(expressValidator({
   }
 }));
 
-//Connect flash
-app.use(flash());
-
-//Global vars
-app.use(function(req, res, next){
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  res.locals.user = req.user || null;
-  next();
+//Use index for spa
+app.use(function(req, res) {
+  res.sendFile('layout.html', {root: './views/layouts'});
 });
-
-//Use routes
-app.use('/', routes);
-app.use('/users', users);
 
 //Set port
 app.set('port', (process.env.PORT || 3000));
