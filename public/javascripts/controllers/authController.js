@@ -35,7 +35,6 @@ app.controller('authController', function($scope, $http, $location) {
       }
     })
     .error(function(data){
-      console.log('eror');
       console.log(data);
       $scope.error_message = {msg: data.message};
     });

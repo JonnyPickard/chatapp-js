@@ -43,8 +43,14 @@ router.post('/register', function(req, res, next){
 });
 
 passport.use(new LocalStrategy(
+  {
+    username: "username",
+    password: "password"
+  },
   function(username, password, done) {
+    console.log("here");
     User.getUserByUsername(username, function(err, user){
+      console.log('gettingUser');
       if(err) throw err;
       if(!user){
         return done(null, false, {message: 'Unknown User'});
@@ -73,22 +79,16 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-router.post('/login', function(req, res){
-  passport.authenticate('local', function(req, res){
-    res.send(200, {state: 'success'});
-  });
-  res.send(401, {state: 'error', message: 'username or password are incorect'});
-});
+router.post('/login',
+  passport.authenticate('local'), function(req, res){
+    res.status(200).send({status: 'success'});
+  }
+);
 
 router.get('/logout', function(req, res){
   req.logout();
 
-  res.redirect('#/users/login');
+  res.status(200).send({status: 'success'});
 });
 
 module.exports = router;
-
-
-
-
-//
