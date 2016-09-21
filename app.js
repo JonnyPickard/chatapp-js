@@ -16,7 +16,7 @@ var routes  = require('./routes/index');
 var users   = require('./routes/users');
 
 //Set up db
-mongoose.connect('mongodb://localhost/loginapp');
+mongoose.connect('mongodb://localhost/chatapp');
 var db      = mongoose.connection;
 
 //Init app

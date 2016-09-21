@@ -1,4 +1,4 @@
-LoginApp
+Chatapp
 ========
 
-User authentication web app made with: ExpressJS, NodeJS, Passport, Bcrypt and express-handlebars
+This is a culmination of my express login example and angular chat app.
