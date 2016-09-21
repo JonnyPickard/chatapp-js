@@ -36,7 +36,6 @@ router.post('/register', function(req, res, next){
 
     User.createUser(newUser, function(err, user) {
       if(err) throw err;
-      console.log(user);
     });
 
     res.send(200, {state: 'success'}); //put in a return object
@@ -74,12 +73,12 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-router.post('/login',
-  passport.authenticate('local', {sucessRedirect: '/', failureRedirect: '/users/login', failureFlash: true}),
-  function(req, res){
-    res.redirect('/');
-  }
-);
+router.post('/login', function(req, res){
+  passport.authenticate('local', function(req, res){
+    res.send(200, {state: 'success'});
+  });
+  res.send(401, {state: 'error', message: 'username or password are incorect'});
+});
 
 router.get('/logout', function(req, res){
   req.logout();

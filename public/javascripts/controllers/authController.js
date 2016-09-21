@@ -23,4 +23,21 @@ app.controller('authController', function($scope, $http, $location) {
 			}
 		});
 	};
+
+  $scope.login = function(){
+		$http.post('/users/login', {username: $scope.user.username, password: $scope.user.password})
+    .success(function(data){
+      console.log(data);
+
+      if(data.state == 'success'){
+        console.log(data);
+				$location.path('/');
+      }
+    })
+    .error(function(data){
+      console.log('eror');
+      console.log(data);
+      $scope.error_message = {msg: data.message};
+    });
+	};
 });
