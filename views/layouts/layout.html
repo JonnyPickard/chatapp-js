@@ -21,10 +21,10 @@
       <nav>
         <ul class="nav nav-pills pull-right">
 
-            <li role="presentation"><a href="" ng-controller="navController" ng-click="logout()" target="_self">Logout</a></li>
+            <li role="presentation"><a href="#/users/login" ng-show="currentUserSignedIn" ng-controller="navController" ng-click="logout()" target="_self">Logout</a></li>
 
-            <li role="presentation"><a href="#/users/login">Login</a></li>
-            <li role="presentation"><a href="#/users/register">Sign Up</a></li>
+            <li role="presentation"><a href="#/users/login" ng-hide="currentUserSignedIn">Login</a></li>
+            <li role="presentation"><a href="#/users/register" ng-hide="currentUserSignedIn">Sign Up</a></li>
 
         </ul>
       </nav>

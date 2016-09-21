@@ -38,7 +38,7 @@ router.post('/register', function(req, res, next){
       if(err) throw err;
     });
 
-    res.send(200, {state: 'success'}); //put in a return object
+    res.status(200).send({status: 'success'});
   }
 });
 
@@ -48,9 +48,7 @@ passport.use(new LocalStrategy(
     password: "password"
   },
   function(username, password, done) {
-    console.log("here");
     User.getUserByUsername(username, function(err, user){
-      console.log('gettingUser');
       if(err) throw err;
       if(!user){
         return done(null, false, {message: 'Unknown User'});
@@ -81,14 +79,16 @@ passport.deserializeUser(function(id, done) {
 
 router.post('/login',
   passport.authenticate('local'), function(req, res){
-    res.status(200).send({status: 'success'});
+    res.status(200).send({state: 'success'});
+  }, function(err, req, res){
+    return res.status(401).send({message: "username or password do not exist"});
   }
 );
 
 router.get('/logout', function(req, res){
   req.logout();
 
-  res.status(200).send({status: 'success'});
+  res.status(200).send({state: 'success'});
 });
 
 module.exports = router;
