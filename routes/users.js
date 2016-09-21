@@ -7,6 +7,7 @@ var User = require('../models/user');
 
 //Create User
 router.post('/register', function(req, res, next){
+
   var name      = req.body.name;
   var email     = req.body.email;
   var username  = req.body.username;
@@ -24,9 +25,7 @@ router.post('/register', function(req, res, next){
   var errors = req.validationErrors();
 
   if (errors){
-    res.render('register', {
-      errors:errors
-    });
+    res.send(errors);
   } else {
     var newUser = new User({
       name: name,
@@ -40,9 +39,7 @@ router.post('/register', function(req, res, next){
       console.log(user);
     });
 
-    req.flash('success_msg', 'You are registered and can now login');
-
-    res.redirect('/users/login');
+    res.send(200, {state: 'success'}); //put in a return object
   }
 });
 

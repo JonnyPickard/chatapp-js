@@ -1,6 +1,6 @@
-angular.module('chatapp')
+var app = angular.module('chatapp');
 
-.controller('chatController', function($scope) {
+app.controller('chatController', function($scope) {
 
   $scope.test = "test";
   // $scope.chatList = [];

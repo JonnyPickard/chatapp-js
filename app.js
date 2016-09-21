@@ -60,10 +60,11 @@ app.use(expressValidator({
   }
 }));
 
-//Use index for spa
-app.use(function(req, res) {
-  res.sendFile('layout.html', {root: './views/layouts'});
-});
+var users = require('./routes/users.js');
+var index = require('./routes/index.js');
+
+app.use('/', index);
+app.use('/users', users);
 
 //Set port
 app.set('port', (process.env.PORT || 3000));
