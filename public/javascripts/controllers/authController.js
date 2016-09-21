@@ -12,8 +12,6 @@ app.controller('authController', function($scope, $http, $location) {
   };
 
   $scope.register = function(){
-    console.log("register");
-    console.log($scope.user);
 		$http.post('/users/register', $scope.user).success(function(data){
 			if(data.state == 'success'){
         console.log(data);

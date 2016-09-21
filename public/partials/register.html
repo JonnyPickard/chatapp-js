@@ -1,6 +1,7 @@
 <div ng-controller="authController">
-  <span>{{test}}</span>
-  {{error_message}}
+  <div class="alert alert-danger" ng-repeat="error in error_message">
+    {{error.msg}}
+  </div>
   <h2 class="page-header">Register</h2>
   <form class="form-auth" ng-submit="register()">
 
