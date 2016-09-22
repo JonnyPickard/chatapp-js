@@ -1,5 +1,5 @@
 <div ng-controller="chatController">
-  <div class="chatFeed" ng-repeat="chat in chatList | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+  <div class="chatFeed" ng-show="chatsArePresent" ng-repeat="chat in chatList | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
     <div id="chatText">{{chat.text}}</div>
     <span id="chatUser">by: {{chat.user}} </span>
     <span id="chatTimeStamp">  @{{chat.time}}</span><br />
@@ -7,6 +7,7 @@
 
   <div class="chatFooter col-md-offset-2 col-md-8">
     <form ng-submit="addChat()">
+      <br />
       <input class="chatInput form-control" type="text" ng-model="chat" required>
       <input class="btn" type="submit" value="Chat">
     </form>

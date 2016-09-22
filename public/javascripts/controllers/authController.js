@@ -17,7 +17,7 @@ app.controller('authController', function($scope, $http, $location, $rootScope) 
 			if(data.state == 'success'){
         console.log(data);
         $scope.isError = false;
-				$location.path('/');
+				$location.path('/chat');
 			}
 			else
       {
@@ -35,7 +35,7 @@ app.controller('authController', function($scope, $http, $location, $rootScope) 
         $rootScope.currentUserSignedIn = true;
         $rootScope.currentUserName = $scope.user.username;
         $scope.isError = false;
-				$location.path('/');
+				$location.path('/chat');
       }
     })
     .error(function(data) {

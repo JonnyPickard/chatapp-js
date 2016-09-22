@@ -2,7 +2,15 @@ var app = angular.module('chatapp');
 
 app.controller('chatController', function($scope, $rootScope) {
 
-  $scope.chatList = ["Hello"];
+  $scope.chatList = [];
+
+  $scope.chatsArePresent = function() {
+    if ($scope.chatList.length === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   $scope.addChat = function(){
     $scope.chatList.push({

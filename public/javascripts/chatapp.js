@@ -6,8 +6,8 @@ app.config(function($routeProvider, $controllerProvider){
 
   $routeProvider
     .when('/', {
-      templateUrl: 'partials/chat.html',
-      controller: 'chatController'
+      templateUrl: 'partials/login.html',
+      controller: 'authController'
     })
     .when('/users/login', {
       templateUrl: 'partials/login.html',
@@ -16,5 +16,9 @@ app.config(function($routeProvider, $controllerProvider){
     .when('/users/register', {
       templateUrl: 'partials/register.html',
       controller: 'authController'
+    })
+    .when('/chat',{
+      templateUrl: 'partials/chat.html',
+      controller: 'chatController'
     });
 });
