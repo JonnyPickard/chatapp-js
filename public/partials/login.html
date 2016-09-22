@@ -1,8 +1,6 @@
 <div ng-controller="authController">
 
-  <div class="alert alert-danger">
-    {{error_message}}
-  </div>
+  <div class="alert alert-danger" ng-show="isError">{{error_message}}</div>
 
   <h2 class="page-header">Account Login</h2>
 

@@ -1,7 +1,8 @@
 var app = angular.module('chatapp');
 
 app.controller('authController', function($scope, $http, $location, $rootScope) {
-  $scope.test = "auth controller";
+
+  $scope.isError = false;
 
   $scope.user = {
     name: "",
@@ -15,10 +16,12 @@ app.controller('authController', function($scope, $http, $location, $rootScope) 
 		$http.post('/users/register', $scope.user).success(function(data){
 			if(data.state == 'success'){
         console.log(data);
+        $scope.isError = false;
 				$location.path('/');
 			}
 			else
       {
+        $scope.isError = true;
 				$scope.error_message = data.message;
 			}
 		});
@@ -30,11 +33,13 @@ app.controller('authController', function($scope, $http, $location, $rootScope) 
 
       if(data.state == 'success'){
         $rootScope.currentUserSignedIn = true;
-        $rootScope.currentUserName = $scope.user.name;
+        $rootScope.currentUserName = $scope.user.username;
+        $scope.isError = false;
 				$location.path('/');
       }
     })
     .error(function(data) {
+      $scope.isError = true;
       $scope.error_message = "username or password does not exist";
     });
 	};

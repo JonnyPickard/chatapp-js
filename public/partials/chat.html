@@ -4,4 +4,11 @@
     <span id="chatUser">by: {{chat.user}} </span>
     <span id="chatTimeStamp">  @{{chat.time}}</span><br />
   </div>
+
+  <div class="chatFooter col-md-offset-2 col-md-8">
+    <form ng-submit="addChat()">
+      <input class="chatInput form-control" type="text" ng-model="chat" required>
+      <input class="btn" type="submit" value="Chat">
+    </form>
+  </div>
 </div>
